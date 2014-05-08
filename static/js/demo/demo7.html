@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 4.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery formValidator表单验证插件 -- by:猫冬，email:wzmaodong@126.com</title>
+<meta name="Author" content="猫冬" />
+<meta name="description" content="jQuery formValidator表单验证插件" />
+<meta name="keywords" content="jQuery,formValidator,插件,表单,验证,插件,javascript,表单验证,提示层" />
+<script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="formValidator-4.1.3.js" type="text/javascript" charset="UTF-8"></script>
+<script src="formValidatorRegex.js" type="text/javascript" charset="UTF-8"></script>
+<script language="javascript" src="DateTimeMask.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	$.formValidator.initConfig({theme:"Default",submitOnce:true,formID:"form1",ajaxForm:{
+			dataType : "html",
+			buttons:$("#button"),
+			url: "http://www.51gh.net/chkuser.aspx?act=ok"
+		},
+		onError:function(msg,obj,errorlist){
+			$("#errorlist").empty();
+			$.map(errorlist,function(msg){
+				$("#errorlist").append("<li>" + msg + "</li>")
+			});
+			alert(msg);
+		},
+		submitAfterAjaxPrompt : '有数据正在异步验证，请稍等...'
+	});
+	$("#us").formValidator({onShow:"请输入用户名,只有输入\"maodong\"才是对的",onFocus:"用户名至少5个字符,最多10个字符",onCorrect:"该用户名可以注册"}).inputValidator({min:5,max:10,onError:"你输入的用户名非法,请确认"}).regexValidator({regExp:"username",dataType:"enum",onError:function(data){return "用户名["+data+"]格式不正确"}})
+	    .ajaxValidator({
+		dataType : "json",
+		async : true,
+		url : "http://www.yhuan.com/Handler.ashx",
+		success : function(data){
+            if( data == "0" ) return true;
+			return "该用户名不可用，请更换用户名";
+		},
+		buttons: $("#button"),
+		error: function(jqXHR, textStatus, errorThrown){alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);},
+		onError : "该用户名不可用，请更换用户名",
+		onWait : "正在对用户名进行合法性校验，请稍候..."
+	}).defaultPassed();
+	$("#password1").formValidator({onShow:"请输入密码",onFocus:"至少1个长度",onCorrect:"密码合法"}).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"密码两边不能有空符号"},onError:"密码不能为空,请确认"});
+	$("#password2").formValidator({onShow:"输再次输入密码",onFocus:"至少1个长度",onCorrect:"密码一致"}).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"重复密码两边不能有空符号"},onError:"重复密码不能为空,请确认"}).compareValidator({desID:"password1",operateor:"=",onError:"2次密码不一致,请确认"});
+    $("#ms").formValidator({onShowText:"这家伙很懒，什么都没有留下。",ajax:true,onShow:"请输入你的描述",onFocus:"描述至少要输入10个汉字或20个字符",onCorrect:"恭喜你,你输对了",defaultValue:"这家伙很懒，什么都没有留下。"}).inputValidator({min:20,onError:"你输入的描述长度不正确,请确认"});
+});
+</script>
+<style type="text/css">
+body,div{font-size:12px;}
+tr{height:32px;}
+</style>
+</head>
+
+<body>
+<h3>jQuery formValidator表单验证插件示例</h3>
+<p><strong>固定提示层(FixTip)。演示插件4.1.0提供的ajaForm对整个form进行提交</strong></p>
+<p>请访问官方网站获取更多的资料和帮助:<a href="http://www.yhuan.com/">http://www.yhuan.com/</a></p>
+<form action="" method="post" name="form1" id="form1">
+  
+  
+    <input type="submit" name="button" id="button" value="提交" />
+<br />
+  <table border="0px" style="font-size:12px" width="630px">
+    <tr> 
+      <td align="right">用户名:</td>
+      <td><input type="text" id="us" name="us" style="width:120px" value="maodong" /></td>
+      <td><div id="usTip" style="width:280px"></div></td>
+    </tr>
+    <tr> 
+      <td align="right">密码:</td>
+      <td><input type="password" id="password1" name="password1" style="width:120px" /></td>
+      <td><div id="password1Tip" style="width:280px"></div></td>
+    </tr>
+    <tr> 
+      <td align="right">重复密码:</td>
+      <td><input type="password" id="password2" name="password2" style="width:120px" /></td>
+      <td><div id="password2Tip" style="width:280px"></div></td>
+    </tr>
+    <tr> 
+      <td align="right" valign="top">你的描述:</td>
+      <td colspan="2" valign="top"> <textarea id="ms" name="ms" cols="50" rows="10">这里是十个中文字符哦</textarea> 
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="3"><div id="msTip" style="width:280px"></div></td>
+    </tr>
+  </table>
+  
+</form>
+<div id="output"></div>
+</body>
+</html>

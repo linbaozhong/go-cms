@@ -1,0 +1,106 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery formValidator表单验证插件 -- by:猫冬，email:wzmaodong@126.com</title>
+<meta name="Author" content="猫冬">
+<meta name="description" content="jQuery formValidator表单验证插件" />
+<meta name="keywords" content="jQuery,formValidator,插件,表单,验证,插件,javascript,表单验证,提示层" />
+<script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="formValidator-4.1.3.js" type="text/javascript" charset="UTF-8"></script>
+<script src="formValidatorRegex.js" type="text/javascript" charset="UTF-8"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+		//第一组校验组，默认组号为"1"
+        $.formValidator.initConfig({formID:"form1",debug:true,onSuccess:function(){alert("校验组1通过验证，不过我不给它提交");},onError:function(){alert("具体错误，请看网页上的提示")}});
+		$("#password1").formValidator({onShow:"请输入密码",onFocus:"至少1个长度",onCorrect:"密码合法"}).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"密码两边不能有空符号"},onError:"密码不能为空,请确认"});
+		$("#password2").formValidator({onShow:"输再次输入密码",onFocus:"至少1个长度",onCorrect:"密码一致"}).inputValidator({min:1,empty:{leftEmpty:false,rightEmpty:false,emptyError:"重复密码两边不能有空符号"},onError:"重复密码不能为空,请确认"}).compareValidator({desID:"password1",operateor:"=",onError:"2次密码不一致,请确认"});
+		$(":radio[name='xb_one']").formValidator({tipID:"sexTip",onShow:"请选择你的性别",onFocus:"没有第三种性别了，你选一个吧",onCorrect:"输入正确",defaultValue:["1"]}).inputValidator({min:1,max:1,onError:"性别忘记选了,请确认"});//.defaultPassed();
+		$("#nl").formValidator({autoModify:true,onShow:"请输入的年龄（1-99岁之间）",onFocus:"只能输入1-99之间的数字哦",onCorrect:"恭喜你,你输对了"}).inputValidator({min:1,max:99,type:"value",onErrorMin:"你输入的值必须大于等于1",onError:"年龄必须在1-99之间，请确认"});
+		
+		//第二组校验组，组号为"2"
+        $.formValidator.initConfig({validatorGroup:"2",formID:"form2",debug:true,onSuccess:function(){alert("校验组2通过验证，不过我不给它提交")},onError:function(){alert("具体错误，请看网页上的提示")}});
+       	$("#csny").formValidator({validatorGroup:"2",onShow:"请输入的出生日期",onFocus:"请输入的出生日期，不能全部是0哦",onCorrect:"你输入的日期合法"}).inputValidator({min:"1900-01-01",max:"2000-01-01",type:"date",onError:"日期必须在\"1900-01-01\"和\"2000-01-01\"之间"});
+		$("#sfzh").formValidator({validatorGroup:"2",onShow:"请输入15或18位的身份证",onFocus:"输入15或18位的身份证",onCorrect:"输入正确"}).functionValidator({fun:isCardID});
+		$("#email").formValidator({validatorGroup:"2",onShow:"请输入邮箱",onFocus:"邮箱6-100个字符,输入正确了才能离开焦点",onCorrect:"恭喜你,你输对了",defaultValue:"@"}).inputValidator({min:6,max:100,onError:"你输入的邮箱长度非法,请确认"}).regexValidator({regExp:"^([\\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$",onError:"你输入的邮箱格式不正确"});
+		$("#xueli").formValidator({validatorGroup:"2",onShow:"请选择你的学历",onFocus:"学历必须选择",onCorrect:"谢谢你的配合",defaultValue:"a"}).inputValidator({min:1,onError: "你是不是忘记选择学历了!"});
+	
+	})
+    </script>
+	<style type="text/css" media="all">
+body{font-size:12px;}
+tr{height:32px;}
+</style>
+</head>
+<body>
+
+<h2>jQuery formValidator表单验证插件示例</h2>
+<p><strong>两个校验组。两个校验组是分开校验的，互不影响</strong></p>
+<p>请访问官方网站获取更多的资料和帮助:<a href="http://www.yhuan.com/">http://www.yhuan.com/</a></p>
+<fieldset style="width:520px;">
+                <LEGEND><SPAN id="help_topic_icon" style="font-weight:bold;font-size:12px">第一组</SPAN></LEGEND>
+			<form id='form1'>
+        		<table border="0px" style="font-size:12px" width="630px">
+				<tr> 
+				  <td align="right">密码:</td>
+				  <td><input type="password" id="password1" name="password1" style="width:120px" /></td>
+				  <td><div id="password1Tip" style="width:250px"></div></td>
+				</tr>
+				<tr> 
+				  <td align="right">重复密码:</td>
+				  <td><input type="password" id="password2" name="password2" style="width:120px" /></td>
+				  <td><div id="password2Tip" style="width:250px"></div></td>
+				</tr>
+				<tr> 
+				  <td align="right">你的性别:</td>
+				  <td><input type="radio" id="sex" value="1" name="xb_one" />
+					男&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="sex1" value="2" name="xb_one" />
+					女</td>
+				  <td><div id="sexTip" style="width:250px"></div></td>
+				</tr>
+				<tr> 
+				  <td align="right">你的年龄:</td>
+				  <td><input type="text" id="nl" name="nl" style="width:120px" /></td>
+				  <td><div id="nlTip" style="width:250px"></div></td>
+				</tr>
+				<tr><td colspan="3"><input id="Submit1" type="submit" value="验证第一组" /></td></tr>
+				</table></form>
+</fieldset>
+	</br></br>
+	<fieldset style="width:520px;">
+                <LEGEND><SPAN id="help_topic_icon" style="font-weight:bold;font-size:12px">第二组</SPAN></LEGEND>
+			<form id='form2'>
+        		<table border="0px" style="font-size:12px" width="630px">
+				<tr> 
+				  <td align="right">出生日期:</td>
+				  <td><input type="text" id="csny" name="csny" style="width:120px" value="" /></td>
+				  <td><div id="csnyTip" style="width:300px"></div></td>
+				</tr>
+				<tr>
+				  <td align="right">身份证号</td>
+				  <td><input name="sfzh" type="text" id="sfzh" style="width:150px" value="" /></td>
+				  <td><div id="sfzhTip" style="width:250px"></div></td>
+				</tr>
+				<tr> 
+				  <td align="right">电子邮箱:</td>
+				  <td><input type="text" id="email" name="email" style="width:120px" /></td>
+				  <td><div id="emailTip" style="width:250px"></div></td>
+				</tr>
+				<tr> 
+				  <td align="right">你的学历:</td>
+				  <td> <select name="xueli" id="xueli">
+					  <option value="">－－请选择你的学历－－</option>
+					  <option value="a">专科</option>
+					  <option value="b">本科</option>
+					  <option value="c">研究生</option>
+					  <option value="e">硕士</option>
+					  <option value="d">博士</option>
+					</select> 
+				  </td>
+				  <td><div id="xueliTip" style="width:250px"></div></td>
+				</tr>
+				<tr><td colspan="3"><input id="Submit2" type="submit" value="验证第二组" /></td></tr>
+				</table></form>
+</fieldset>
+
+</body>
+</html>
