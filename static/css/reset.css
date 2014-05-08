@@ -1,0 +1,66 @@
+*{margin:0;padding:0;border:0;font-size:12px;}
+ul{list-style:none;}
+a{text-decoration: none;color:#656464}
+.top{width:auto;height:143px;background:url(../images/ttopbj.png) no-repeat center 0;}
+.top_cen{width:915px;margin:0 auto;}
+.top_cen h1{float:left;height:143px;}
+.Rbut{float:right;width:618px;height:143px;background:url(../images/ttopic.png) no-repeat left 0;}
+
+.nav{height:34px;background:url(../images/tnavbj.png) no-repeat center 0;clear:both;}
+.nav ul{width:915px;height:32px;margin:0 auto;background:url(../images/tnavulb.png) repeat-y;border-top:solid 1px #959595;border-bottom:solid 2px #fff;}
+.nav ul li{float:left;border-right:solid 1px #959595;}
+.nav ul li.lbor{border-left:solid 1px #959595;}
+.nav ul li a{display:block;width:129px;height:32px;line-height:32px;color:#656464;text-align:center;}
+.nav ul li a.hover{background:url(../images/navahover.png) repeat-x;border:solid 1px #fff;color:#fff;width:127px;height:30px;}
+.nav ul li a:hover{background:url(../images/navahover.png) repeat-x;border:solid 1px #fff;color:#fff;width:127px;height:30px;}
+
+.wrap{width:auto;clear:both;background:#393939 url(../images/tban.png) no-repeat center 0;}
+.center{width:916px;height:1000px;margin:0 auto;background:#f1f1f1 url(../images/teambj.jpg) repeat-x;padding-top:40px;}
+.title_L{float:left;width:169px;height:595px;padding-right:10px;padding-left:20px;border-right:solid 2px #fff;}
+.title_L ul{padding-top:20px;}
+.title_L ul li{line-height:23px;padding-left:30px;}
+.title_L ul li a{color:#777777;}
+.title_L ul li a.hover{color:#ed6d00;}
+.title_L ul li a:hover{color:#ed6d00;}
+
+.title_R{float:right;width:705px;padding-right:8px;}
+.title_cen{width:648px;}
+.title_cen p{padding:15px 0 0 30px;color:#4d4d4d;line-height: 20px;}
+.title_cen p strong{font-size:17px;font-weight:bold;}
+/* case */
+
+.skipUrl{float: right;padding-top: 25px;width:140px;}
+.skipUrl .skipL{float:left;width:12px;height:25px;background:url(../images/sanbj.png) no-repeat left center;padding-right:5px;}
+.skipUrl .skipR{float:left;width:12px;height:25px;background:url(../images/sanbj.png) no-repeat right center;padding-left:5px;}
+.skipC{float:left}
+.skipC a{float:left;width:25px;height:25px;line-height:25px;background:url(../images/sanbj.png) no-repeat -19px center;text-align:center;color:#6a6767;}
+.skipC a.hover{color:#ed6d00;}
+.skipC a:hover{color:#ed6d00;}
+
+/* comment */
+.title_cen ul {padding:0 0 20px 30px;line-height:22px;}
+.title_cen ul li a.hover{color:#ed6d00;}
+.title_cen ul li a:hover{color:#ed6d00;}
+
+/* join */
+.title_cen p strong.titH{color:#ed6d00;font-size:18px;}
+.title_cen p span.Hfont{color:#ed6d00;}
+
+/* spiritual */
+.title_cen div.black{min-height:215px;padding-right:30px;margin-bottom:40px;clear:both;}
+.title_cen div.black h3{width:165px;height:260px;float:left;padding-right:30px;}
+.title_cen div.black h3 img{width:165px;}
+.title_cen div.black p strong{font-size:17px;font-weight:bold;}
+.title_cen div.black p span{font-weight:bold;padding-left:10px;color:#4d4d4d;}
+
+/* team */
+.phone{float: right;padding-top: 25px;}
+
+/* view */
+.title_cen div.view{padding-left:30px;}
+.title_cen div.view h3{width:165px;float:left;padding-right:30px;}
+.title_cen div.view h3 img{width:165px;}
+
+.bottom{width:auto;height:135px;background:url(../images/tbottom.png) no-repeat center 0;_background:url(../images/tbottom.png) no-repeat -324px 0;}
+.bottom p{width:915px;margin:0 auto;}
+.wz{display:block;width:155px;color:#fff;font-weight:bold;padding-top: 25px;float:right;font-size:14px;}

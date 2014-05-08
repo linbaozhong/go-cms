@@ -1,0 +1,3 @@
+先运行start.exe，然后就会了~~~
+
+WebServer.exe是从Microsoft WebMatrix中提取出来的，需要先安装.net framework。

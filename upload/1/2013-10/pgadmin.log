@@ -1,0 +1,6 @@
+2013-07-25 18:03:54 ERROR  : Error connecting to the server: 致命错误:  用户 "postgres" Password 认证失败
+
+2013-07-25 18:04:12 ERROR  : Error connecting to the server: fe_sendauth: no password supplied
+
+2013-07-25 18:05:09 ERROR  : Error connecting to the server: 致命错误:  用户 "postgres" Password 认证失败
+

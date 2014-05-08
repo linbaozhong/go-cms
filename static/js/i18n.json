@@ -1,0 +1,42 @@
+{
+	"zh":{
+		"title":"欢迎来到Orange"
+		,"company": "Orange传媒"
+		,"product":"网盘"
+		,"version":"0.1"
+		,"domain": "www.Orange.cn"
+		,"siteName": "公司网盘"
+		,"create":"新建"
+		,"save":"保存"
+		,"submit":"提交"
+		,"send":"发送"
+		,"success":"成功"
+		,"upload":"上传"
+		,"download":"下载"
+		,"notFound": "没有找到"
+		,"errTxDone": "事物已经提交或回滚"
+		,"missPK": "找不到主键"
+		,"unknown": "未知错误"
+		,"methodNotAllowed": "不允许此方法的请求"
+		,"permissionDeny": "权限不足,拒绝访问"
+		,"request": "请求"
+		,"accoundNotFound": "账户不存在"
+		,"accountLocked":"账户被锁定"
+		,"invalidPassword": "密码错误"
+		,"updatePasswordFail":"密码修改失败"
+		,"invalidAccount":"无效账户"
+		,"sameNameAccount":"存在同名账户"
+		,"invalidRequestParams":"无效的请求参数"
+		,"accoundInfoNotFound":"账户信息残缺"
+		,"inconsistent":"两次输入的密码不一致"
+		,"invalidFormToken":"无效的表单签名"
+		,"renameFail":"重命名失败"
+		,"resetFail":"状态重置失败"
+		,"deleteFail":"删除失败"
+		,"denyOneself":"禁止自宫"
+		,"etc":"等"
+	}
+	,"en":{
+
+	}
+}

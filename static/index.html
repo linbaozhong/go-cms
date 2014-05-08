@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Baidu</title>
+    <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/app.css">
+    <script rel="stylesheet" src="scripts/jquery-2.1.0.min.js"></script>
+    <script rel="stylesheet" src="scripts/jquery.mobile-1.4.2.min.js"></script>
+</head>
+<body>
+    <div class="start-wrap">
+        <div id="start">
+            <ul>
+                <li><img src="images/start-01.jpg" width="100%" alt=""></li>
+                <li><img src="images/start-02.jpg" width="100%" alt=""></li>
+                <li><img src="images/start-03.jpg" width="100%" alt=""></li>
+            </ul>
+        </div>   
+        <div class="start-num">
+            <a href="" class="active"></a>
+            <a href=""></a>
+            <a href=""></a>
+        </div>     
+    </div>
+    <div class="wrap" style="display:none;">
+        <div class="top"><strong>iBreath</strong> 智呼吸</div>
+        <div class="gray-bg"></div>
+        <div class="canvas-wrap step-1">
+            <div class="tip-top">为了让手机更好的接受空气<br />请进行平衡校对</div>
+            <div class="canvas-box">
+                <canvas width="240" height="240" class="canvas-ball"></canvas>
+            </div>
+            <div class="tip-bottom"><strong>平衡校准中</strong><br />请端平手机 &bull; 保持姿势</div>
+        </div>
+        <div class="step-2">
+            <img src="images/step-2-bg.jpg" width="280" alt="">
+        </div>
+        <div class="step-3" style="display:none;">
+            <img id="imgprocess" name="imgprocess" src="images/process-01.jpg" style="display:none;" />
+            <canvas width="240" height="240" class="canvas-process" id="canvas-process"></canvas>
+            <p id="hand-message">准备开始</p>
+        </div>
+        <img src="images/btn.png" width="90" id="btn-hand" alt="">
+        <div class="step-4">
+            <p style="font-size:2.5rem;text-align:center;color:#636363">您的健康指数</p>
+            <div class="health-number">
+                <div class="health-number-wrap">
+                    <i class="number-ten"></i>
+                    <i class="number-bits"></i>
+                    <i class="number-dec"></i>
+                </div>
+            </div>
+            <p class="health-steer"></p>
+            <div class="health-item">
+                <h4 class="health-title">大数据分析出呼吸气体成份</h4>
+                <div class="canvas-pie">
+                    <canvas id="canvas-pie" width="300" height="200"></canvas>
+                </div>
+                <ul class="pie-item">
+                    <li><span class="red"></span>H2O（水）：<em></em></li>
+                    <li><span class="yellow"></span>O2（氧）：<em></em></li>
+                    <li><span class="green"></span>N2（氮）：<em></em></li>
+                    <li><span class="blue"></span>Co2（二氧化碳）：<em></em></li>
+                    <li><span class="purple"></span>其他气体ppb(nmol/mol)：<em></em></li>
+                    <li style="padding-left:1rem;">C3H6O (丙酮)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C4H8O (2-丁酮)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C5H10O (2-戊酮)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C3H8O (1-丙醇)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C8H7N (吲哚)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">H2S (硫化氢)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">CH4S (甲基硫醇)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C2H6S (二甲基硫)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C2H6S2 (二甲基二硫)：<em>0.001%</em></li>
+                    <li style="padding-left:1rem;">C2H6S3 (二甲基三硫)：<em>0.001%</em></li>
+                </ul>
+                <div class="health-anyl">
+                    <img src="images/title-doct.jpg" width="238" style="margin:0 auto;display:block;" alt="">
+                    <h4 class="health-title">医师团分析及建议</h4>
+                    <ul class="health-anyl-item">
+                    </ul>
+                </div>
+                <div class="share">
+                    <h4 class="health-title">分享</h4>
+                    <div class="share-wrap">
+                        <p class="icon-baidu"><strong>手机百度分享</strong><br />点击右下角，选择（分享）</p>
+                        <p class="icon-weixin"><strong>微信分享</strong><br />点击右上角，选择（发送<br />给朋友）或（分享到朋友圈）</p>
+                        <p style="color:#3399cc;font-size:2.2rem;font-weight:700;line-height:3rem;margin-top:1rem;text-align:center;">下载手机百度&bull;随时随地<br />知道你的健康情况</p>
+                    </div>
+                    <div class="share-button">
+                        <ul>
+                            <li id="resetApp"></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <ul>
+                <li class="active"><span></span>STEP1</li>
+                <li><span></span>STEP2</li>
+                <li><span></span>STEP3</li>
+                <li><span></span>STEP4</li>
+            </ul>
+            <div class="step"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/app.js"></script>
+</body>
+</html>

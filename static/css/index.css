@@ -1,0 +1,112 @@
+*{margin:0;padding:0;border:0;font-size:12px;}
+ul{list-style:none;}
+a{text-decoration: none;}
+.top{width:auto;height:144px;background:url(../images/topbj.png) no-repeat center 0;}
+.top_cen{width:952px;margin:0 auto;}
+.top_cen h1{float:left;}
+.Rbut{float:right;width:659px;height:144px;background:url(../images/butbj.jpg) no-repeat left 0;}
+.Rbut p{width:175px;height:26px;float:right;padding-top:22px;}
+.Rbut p a{float:left;display:block;width:84px;height:26px;line-height:26px;background:url(../images/topbut.jpg) no-repeat;color:#fff;text-align:center;}
+
+.nav{height:34px;background:url(../images/navbj.png) no-repeat center 0;clear:both;}
+.nav ul{width:952px;height:32px;margin:0 auto;background:url(../images/navulbj.png) repeat-y;border-top:solid 1px #959595;border-bottom:solid 2px #fff;}
+.nav ul li{float:left;border-right:solid 1px #959595;}
+.nav ul li.lbor{border-left:solid 1px #959595;}
+.nav ul li a{display:block;width:157px;height:34px;line-height:34px;color:#656464;text-align:center;}
+.nav ul li a.hover{background:url(../images/navahover.png) repeat-x;color:#fff;border:solid 1px #fff;width:158px !important;height:32px;}
+.nav ul li a:hover{background:url(../images/navahover.png) repeat-x;color:#fff;border:solid 1px #fff;width:155px;height:32px;}
+
+.wrap{width:auto;overflow: hidden;clear:both;background:url(../images/bg_black.png);}
+.center{width:952px;margin:0 auto;background:#484848;}
+.pic{height:595px;}
+.pic img{float:left;}
+.product{height:375px;background:#fff;}
+.pro_cen{width:952px;margin:0px auto;padding-top:30px}
+.pro_cen ul{float:left;padding-right:30px;width:100px;padding-top:17px;}
+.pro_cen ul li{line-height:30px;}
+.pro_cen ul li a{color:#474747;}
+.pro_cen ul li a.hover{color:#fd9b0f;}
+.pro_cen ul li a:hover{color:#fd9b0f;}
+.pro_img{padding:15px 0;width:805px;float:right;}
+.pro_img div img{display:block;float:left;width:179px;height:96px;margin:15px 9px;}
+.pro_img p{width:235px;float:right;padding-top:50px;}
+
+
+
+.wz{display:block;width:150px;color:#fff;font-weight:bold;padding-top: 25px;float:right;font-size:14px;}
+
+.wrap{width:auto;clear:both;background:#393939 url(../images/bg_black.jpg);}
+.center{width:952px;overflow:hidden;margin:0 auto;background:#f1f1f1 url(../images/teambj.jpg) repeat-x;padding-top:40px;}
+.index-center{padding-top:0px !important;}
+.title_L{float:left;width:169px;height:595px;padding-right:10px;padding-left:20px;border-right:solid 2px #fff;}
+.title_L ul{padding-top:20px;}
+.title_L ul li{line-height:23px;padding-left:30px;}
+.title_L ul li a{color:#777777;}
+.title_L ul li a.hover{color:#ed6d00;}
+.title_L ul li a:hover{color:#ed6d00;}
+
+.title_R{float:right;width:705px;padding-right:8px;}
+.title_cen{width:648px;}
+.title_cen p{padding:15px 0 0 30px;color:#4d4d4d;line-height: 20px;}
+.title_cen p strong{font-size:17px;font-weight:bold;}
+/* case */
+
+.skipUrl{clear:both;width:100%;text-align:right;position: absolute;bottom: 10px;}
+.skipUrl .skipL{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;width:12px;height:25px;background:url(../images/sanbj.png) no-repeat left center;padding-right:5px;}
+.skipUrl .skipR{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;width:12px;height:25px;background:url(../images/sanbj.png) no-repeat right center;padding-left:5px;}
+.skipC{display:inline-block;*display:inline;*zoom:1}
+.skipC a{display:inline-block;*display:inline;*zoom:1;width:25px;height:25px;line-height:25px;background:url(../images/sanbj.png) no-repeat -19px center;text-align:center;color:#6a6767;}
+.skipC a.hover{color:#ed6d00;}
+.skipC a:hover{color:#ed6d00;}
+.title_L h3{font-size: 20px;color: #ED6D04;}
+/* comment */
+.title_cen ul {padding:0 0 20px 30px;line-height:22px;}
+.title_cen ul li a.hover{color:#ed6d00;}
+.title_cen ul li a:hover{color:#ed6d00;}
+
+/* join */
+.title_cen p strong.titH{color:#ed6d00;font-size:18px;}
+.title_cen p span.Hfont{color:#ed6d00;}
+
+/* spiritual */
+.title_cen div.black{min-height:215px;padding-right:30px;margin-bottom:40px;clear:both;}
+.title_cen div.black h3{width:165px;height:260px;float:left;padding-right:30px;}
+.title_cen div.black h3 img{width:165px;}
+.title_cen div.black p strong{font-size:17px;font-weight:bold;}
+.title_cen div.black p span{font-weight:bold;padding-left:10px;color:#4d4d4d;}
+
+/* team */
+.phone{float: right;padding-top: 25px;}
+
+/* view */
+.title_cen div.view{padding-left:30px;}
+.title_cen div.view h3{width:165px;float:left;padding-right:30px;}
+.title_cen div.view h3 img{width:165px;}
+
+.bottom{width:auto;height:189px;background:url(../images/bottom.jpg) no-repeat center 0;}
+.bottom p{width:952px;margin:0 auto;}
+.wz{display:block;width:155px;color:#fff;font-weight:bold;padding-top: 25px;float:right;font-size:14px;}
+
+.silder ul{padding:0;}
+.silder{height:506px;}
+.silder ul li{float:left;height:506px;width:674px;overflow:hidden;position:relative;}
+.silder ul li img{display:block;}
+.silder-wrap{margin:0 0 20px 30px;overflow:hidden;position:relative;width:674px;}
+.silder-page{position:absolute;top:50%;left:0;width:100%;display:none;height:0;}
+.silder-page a{width:50px;float:left;height:60px;line-height:60px;opacity: .8;color:#FFF;font-size: 80px;text-align:center;margin-top:-30px;}
+.silder-page a.next{float:right;}
+.silder .silder-title{position: absolute;bottom: 0;left: 0;z-index: 100;font-size: 14px;height: 30px;color: #FFF;line-height: 30px;padding: 0;text-indent: 1em;}
+.num{position:absolute;right:0px;bottom:0px;font-size:0;display:none;text-align:right;width:100%;background: #000;height:30px;line-height: 30px;opacity: .5}
+.num a.on{display:inline-block;*display:inline;*zoom:1;width:10px;height:10px;border-radius: 50%;background:#FFF;font-size:0;margin-right:4px;vertical-align: middle;}
+.num a.curren{background:#585858;}
+.title_cen p{padding-right:30px;padding-top:0;}
+.silder-page a{background:url(../images/icons-jt.png) no-repeat 0 3px;text-indent:-99999px;}
+.silder-page .prev{background-position:20px -57px;}
+.bottomGray{width:100%;height:124px;position:relative;}
+.bottomZ{height:124px;background:url(../images/bottomX.jpg) repeat-x;}
+.botG{width:100%;height:31px;background:url(../images/bottm.png) no-repeat;position:absolute;top:-25px;margin:0 auto;}
+.bottomC{width:952px;height:124px;margin:0 auto;clear:both;}
+.bottomC img{float:left;}
+.bottomC p{float:right;height:24px;line-height:24px;}
+.wz{color:#fff;font-weight:bold;padding-top: 25px;font-size:14px;}
+.title_cen p strong{font-size:12px;}
