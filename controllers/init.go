@@ -2,8 +2,8 @@ package controllers
 
 import (
 	"bytes"
-	"cms/models"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 	"errors"
 	"fmt"
 	"github.com/astaxie/beego"
@@ -39,7 +39,7 @@ func (this *base) init() {
 //终止服务
 func (this *base) end() {
 	this.Layout = ""
-	this.TplNames = ""
+	this.TplName = ""
 
 	this.StopRun()
 }
@@ -51,7 +51,7 @@ func (this *base) errorHandle(msg ...interface{}) {
 	if n > 0 {
 		this.Data["msg"] = msg[0]
 	}
-	this.TplNames = getTplFileName("", "error")
+	this.TplName = getTplFileName("", "error")
 	this.Render()
 	this.end()
 }
@@ -196,13 +196,13 @@ func (this *base) setJsonData(data interface{}) {
 //返回json响应格式
 func (this *base) renderJson(data interface{}) {
 	this.setJsonData(data)
-	this.ServeJson()
+	this.ServeJSON()
 }
 
 //返回jsonp响应
 func (this *base) renderJsonp(data interface{}) {
 	this.setJsonData(data)
-	this.ServeJsonp()
+	this.ServeJSONP()
 }
 
 //渲染html响应
@@ -365,7 +365,7 @@ func Navibar(currentChannelEnName string, level int) template.HTML {
 	data["action"] = currentChannelEnName
 
 	ibytes := bytes.NewBufferString("")
-	t, err := template.ParseFiles(fmt.Sprintf("%s/%s", beego.ViewsPath, getTplFileName("home", "navibar")))
+	t, err := template.ParseFiles(fmt.Sprintf("%s/%s", beego.BConfig.WebConfig.ViewsPath, getTplFileName("home", "navibar")))
 	if err == nil {
 		t.Execute(ibytes, data)
 		icontent, _ := ioutil.ReadAll(ibytes)

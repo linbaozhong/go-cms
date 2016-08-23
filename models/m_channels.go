@@ -2,7 +2,7 @@ package models
 
 import (
 	//"errors"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/utils"
 	"fmt"
 	"strconv"
 	"strings"

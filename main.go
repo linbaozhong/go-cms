@@ -1,19 +1,18 @@
 package main
 
 import (
-	"cms/controllers"
-	"cms/models"
-	"cms/utils"
-	"path"
+	"github.com/linbaozhong/go-cms/controllers"
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 
 	"github.com/astaxie/beego"
 )
 
 func initconfig() {
 	beego.AppPath = utils.AppRoot
-	beego.AppConfigPath = path.Join(beego.AppPath, "conf", "app.conf")
-	beego.ParseConfig()
-	beego.ViewsPath = utils.MergePath(beego.ViewsPath)
+	//beego.AppConfigPath = path.Join(beego.AppPath, "conf", "app.conf")
+	//beego.ParseConfig()
+	beego.BConfig.WebConfig.ViewsPath = utils.MergePath(beego.BConfig.WebConfig.ViewsPath)
 }
 
 func main() {
@@ -73,10 +72,10 @@ func templateFunc() {
 
 //路由
 func router() {
-	beego.DirectoryIndex = true
+	beego.BConfig.WebConfig.DirectoryIndex = true
 	beego.SetStaticPath("/test", utils.MergePath("test"))
 
-	beego.AutoRender = false
+	beego.BConfig.WebConfig.AutoRender = false
 	beego.SetStaticPath("/static", utils.MergePath("static"))
 	beego.SetStaticPath("/upload", utils.MergePath(beego.AppConfig.String("UploadPath")))
 	//首页

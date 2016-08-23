@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"cms/models"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 	"strings"
 )
 
@@ -26,7 +26,7 @@ func (this *Home) Cn() {
 	var action string
 	var childChannelid, articleid int64
 
-	args := this.Ctx.Input.Params
+	args := this.Ctx.Input.Params()
 	n := len(args)
 	//取传入的参数
 	if n > 0 {
@@ -57,7 +57,7 @@ func (this *Home) Cn() {
 	}
 	this.Data["action"] = action
 	if action == "index" {
-		this.TplNames = this.getTplFileName(action)
+		this.TplName = this.getTplFileName(action)
 		return
 	}
 
@@ -142,7 +142,7 @@ func (this *Home) Cn() {
 	this.page.Keywords += "," + article.Keywords
 	this.Data["page"] = this.page
 	//模板
-	this.TplNames = this.getTplFileName("case")
+	this.TplName = this.getTplFileName("case")
 }
 
 //

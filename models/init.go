@@ -1,13 +1,14 @@
 package models
 
 import (
-	"cms/utils"
 	"database/sql"
 	"fmt"
+	"reflect"
+
+	"github.com/linbaozhong/go-cms/utils"
 	"github.com/astaxie/beego"
 	"github.com/coocood/qbs"
 	_ "github.com/mattn/go-sqlite3"
-	"reflect"
 )
 
 //页面公共信息
@@ -67,7 +68,7 @@ var (
 
 func Init() {
 	//qbs.RegisterSqlite3("e:/mygo/src/cms/data/orange.db")
-	qbs.RegisterSqlite3(utils.Sqlite3Path(beego.AppConfig.String("DatabasePath")))
+	qbs.Register("sqlite3", utils.Sqlite3Path(beego.AppConfig.String("DatabasePath")), "orange", qbs.NewSqlite3())
 	db, _ = qbs.GetQbs()
 	// //cache期限
 	// var err error

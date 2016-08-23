@@ -1,9 +1,11 @@
 package controllers
 
 import (
-	"cms/models"
-	"cms/utils"
 	"fmt"
+
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
+
 	"github.com/astaxie/beego"
 	//"strconv"
 )
@@ -19,7 +21,7 @@ func (this *Account) Index() {
 	us, _ := users.GetAll()
 	this.Data["accounts"] = us
 
-	this.TplNames = this.getTplFileName("index")
+	this.TplName = this.getTplFileName("index")
 
 	this.Render()
 }
@@ -30,7 +32,7 @@ func (this *Account) Create() {
 	if this.methodGet {
 		this.Data["token"] = this.token()
 		this.Data["password"] = beego.AppConfig.String("DefaultPassword")
-		this.TplNames = this.getTplFileName("create")
+		this.TplName = this.getTplFileName("create")
 		this.Render()
 		return
 	}
@@ -87,7 +89,7 @@ func (this *Account) Edit() {
 		}
 		this.Data["user"] = u
 
-		this.TplNames = this.getTplFileName("edit")
+		this.TplName = this.getTplFileName("edit")
 		this.Render()
 		return
 	}
@@ -102,7 +104,7 @@ func (this *Account) Edit() {
 
 	models.Extend(u, this.xm)
 
-	u.Id, _ = this.GetInt("id")
+	u.Id, _ = this.GetInt64("id")
 	u.Loginname = this.GetString("loginname")
 	u.Relname = this.GetString("relname")
 
@@ -170,7 +172,7 @@ params：id
 func (this *Account) Reset() {
 	var data interface{}
 	//
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {

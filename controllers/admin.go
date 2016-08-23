@@ -2,10 +2,12 @@ package controllers
 
 import (
 	"fmt"
+
 	"github.com/astaxie/beego"
 	//"cms/models"
-	"cms/utils"
 	"strings"
+
+	"github.com/linbaozhong/go-cms/utils"
 )
 
 type Admin struct {
@@ -52,7 +54,7 @@ func (this *Admin) Upload() {
 }
 
 func (this *Admin) Index() {
-	this.TplNames = this.getTplFileName("index")
+	this.TplName = this.getTplFileName("index")
 	this.Render()
 }
 func (this *Admin) isSuperAdmin() bool {

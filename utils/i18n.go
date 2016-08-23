@@ -6,10 +6,10 @@ import (
 	"github.com/astaxie/beego/config"
 )
 
-var jsons config.ConfigContainer
+var jsons config.Configer
 
 func I18n() {
-	c := config.JsonConfig{}
+	c := config.JSONConfig{}
 	var err error
 	jsons, err = c.Parse(MergePath(beego.AppConfig.String("LangPath")))
 	if err != nil {
