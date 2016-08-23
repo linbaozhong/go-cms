@@ -1,8 +1,8 @@
 package controllers
 
 import (
-	"cms/models"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 )
 
 type Profile struct {
@@ -11,7 +11,7 @@ type Profile struct {
 
 //首页
 func (this *Profile) Index() {
-	this.TplNames = this.getTplFileName("index")
+	this.TplName = this.getTplFileName("index")
 	this.Render()
 }
 
@@ -21,7 +21,7 @@ func (this *Profile) UpdatePassword() {
 	//Get方法
 	if this.methodGet {
 		this.Data["token"] = this.token()
-		this.TplNames = this.getTplFileName("password")
+		this.TplName = this.getTplFileName("password")
 		this.Render()
 		return
 	}
@@ -67,7 +67,7 @@ func (this *Profile) UpdateProfile() {
 	if this.methodGet {
 		this.Data["token"] = this.token()
 		this.Data["user"], _ = users.Get(this.xm.Updator)
-		this.TplNames = this.getTplFileName("edit")
+		this.TplName = this.getTplFileName("edit")
 		this.Render()
 		return
 	}

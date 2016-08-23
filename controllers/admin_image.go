@@ -2,8 +2,8 @@ package controllers
 
 import (
 	//"fmt"
-	"cms/models"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 )
 
 type Image struct {
@@ -29,7 +29,7 @@ func (this *Image) Index() {
 		this.Data["images"] = is
 	}
 
-	this.TplNames = this.getTplFileName("index")
+	this.TplName = this.getTplFileName("index")
 	this.Render()
 }
 
@@ -59,7 +59,7 @@ func (this *Image) Create() {
 		}
 		this.Data["articleid"] = id
 		this.Data["token"] = this.token()
-		this.TplNames = this.getTplFileName("create")
+		this.TplName = this.getTplFileName("create")
 		this.Render()
 		return
 	}
@@ -74,7 +74,7 @@ func (this *Image) Create() {
 
 	models.Extend(m, this.xm)
 
-	m.Articleid, _ = this.GetInt("articleid")
+	m.Articleid, _ = this.GetInt64("articleid")
 	m.Title = this.GetString("title")
 	m.Url = this.GetString("url")
 
@@ -130,7 +130,7 @@ func (this *Image) Edit() {
 		this.Data["image"] = c
 
 		this.Data["token"] = this.token()
-		this.TplNames = this.getTplFileName("edit")
+		this.TplName = this.getTplFileName("edit")
 		this.Render()
 		return
 	}
@@ -143,7 +143,7 @@ func (this *Image) Edit() {
 	//提交DDL
 	var data interface{}
 
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil || id == 0 {
 		this.errorHandle(utils.JsonMessage(false, "invalidRequestParams", this.lang("invalidRequestParams")))
 		return
@@ -157,7 +157,7 @@ func (this *Image) Edit() {
 	}
 	//赋值
 	m.Id = id
-	m.Articleid, _ = this.GetInt("articleid")
+	m.Articleid, _ = this.GetInt64("articleid")
 	m.Title = this.GetString("title")
 	m.Url = this.GetString("url")
 	m.Updated = this.xm.Updated
@@ -199,7 +199,7 @@ func (this *Image) Edit() {
 func (this *Image) Sequence() {
 	var data interface{}
 	//
-	id, err1 := this.GetInt("id")
+	id, err1 := this.GetInt64("id")
 	sq, err2 := this.GetInt("sq")
 
 	if err1 != nil || err2 != nil {
@@ -224,7 +224,7 @@ params：id
 func (this *Image) Reset() {
 	var data interface{}
 	//
-	id, err := this.GetInt("id")
+	id, err := this.GetInt64("id")
 	if err != nil {
 		data = utils.JsonMessage(false, "invalidRequestParams", err.Error())
 	} else {

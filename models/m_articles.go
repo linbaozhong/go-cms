@@ -3,7 +3,7 @@ package models
 import (
 	//"errors"
 	//"fmt"
-	"cms/utils"
+	"github.com/linbaozhong/go-cms/utils"
 	"strings"
 
 	"github.com/coocood/qbs"

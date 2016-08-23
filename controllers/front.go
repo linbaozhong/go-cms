@@ -1,9 +1,10 @@
 package controllers
 
 import (
-	"cms/models"
-	"cms/utils"
 	"fmt"
+
+	"github.com/linbaozhong/go-cms/models"
+	"github.com/linbaozhong/go-cms/utils"
 
 	"github.com/astaxie/beego"
 )
@@ -19,7 +20,7 @@ func (this *Front) Prepare() {
 }
 
 func (this *Front) Finish() {
-	if this.TplNames == "" {
+	if this.TplName == "" {
 		return
 	}
 
@@ -53,7 +54,7 @@ func (this *Front) Login() {
 		this.Data["returnurl"] = returnUrl
 		this.Data["token"] = this.token()
 		this.page.Title = "登录"
-		this.TplNames = this.getTplFileName("login")
+		this.TplName = this.getTplFileName("login")
 		return
 	}
 	//Post

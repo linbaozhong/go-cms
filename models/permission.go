@@ -1,9 +1,10 @@
 package models
 
 import (
-	"cms/utils"
 	"fmt"
 	"strings"
+
+	"github.com/linbaozhong/go-cms/utils"
 )
 
 type Current struct {
